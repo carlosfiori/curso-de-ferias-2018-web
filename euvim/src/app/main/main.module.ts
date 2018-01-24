@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { MainRouting } from './main.rounting';
 
 import {FlexLayoutModule} from '@angular/flex-layout'
-import { MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule, MatCardModule, MatButton, MatButtonModule, MatTableModule } from '@angular/material'
+import { MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule, MatCardModule, MatButton, MatButtonModule, MatTableModule, MatTooltipModule } from '@angular/material'
 import { ConsultaComponent } from './usuario/consulta/consulta.component';
 
 @NgModule({
@@ -21,7 +21,8 @@ import { ConsultaComponent } from './usuario/consulta/consulta.component';
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatTooltipModule
   ],
   declarations: [MainComponent, ConsultaComponent, FormularioComponent]
 })
