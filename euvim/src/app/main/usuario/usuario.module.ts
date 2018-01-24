@@ -1,11 +1,12 @@
+import { FormularioComponent } from './formulario/formulario.component';
+import { ConsultaComponent } from './consulta/consulta.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UsuarioComponent } from './usuario.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [UsuarioComponent]
+  declarations: []
 })
 export class UsuarioModule { }
