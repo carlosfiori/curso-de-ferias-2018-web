@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 
 import { MatInputModule } from '@angular/material/input';
 
+import { RouterModule } from '@angular/router';
+import { MainModule } from './main/main.module';
+import { AppRoutingModule } from './app.rounting';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,7 +17,10 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    RouterModule,
+    MainModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
