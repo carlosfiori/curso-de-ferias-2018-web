@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { DataSource } from '@angular/cdk/collections';
+import { UsuarioService } from '../usuario.service';
 
 @Component({
   selector: 'app-consulta',
@@ -9,8 +10,12 @@ import { DataSource } from '@angular/cdk/collections';
 })
 export class ConsultaComponent implements OnInit {
   displayedColumns = ['nome', 'login', 'email', 'perfil', 'actions'];
-  dataSource = new MatTableDataSource<Usuario>(USUARIO_DATA);
-  constructor() { }
+  dataSource = null;
+  service: UsuarioService
+
+  constructor(private _usuarioService: UsuarioService) {
+    this.dataSource = new MatTableDataSource(this._usuarioService.listar());
+  }
 
   ngOnInit() {
   }
@@ -31,9 +36,3 @@ export interface Usuario {
   email: string;
   perfil: string;
 }
-
-const USUARIO_DATA: Usuario[] = [
-  { id: 1, nome: 'Hydrogen', login: 'Hydrogen.login', email: 'Hydrogen@email.com', perfil: 'Admin' },
-  { id: 2, nome: 'Helium', login: 'Helium.login', email: 'Helium@email.com', perfil: 'Aluno' },
-  { id: 3, nome: 'Lithium', login: 'Lithium.login', email: 'Lithium@email.com', perfil: 'Professor' }
-];
