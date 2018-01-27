@@ -11,6 +11,7 @@ import { MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule, MatCa
 import { ConsultaComponent } from './usuario/consulta/consulta.component';
 import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UsuarioService } from './usuario/usuario.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http/';
 
 @NgModule({
   imports: [
@@ -30,9 +31,10 @@ import { UsuarioService } from './usuario/usuario.service';
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [MainComponent, ConsultaComponent, FormularioComponent],
-  providers: [FormBuilder, UsuarioService]
+  providers: [FormBuilder, UsuarioService, HttpClient]
 })
 export class MainModule { }

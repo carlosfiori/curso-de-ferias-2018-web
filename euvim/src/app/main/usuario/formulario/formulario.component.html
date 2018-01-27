@@ -53,7 +53,7 @@
   </div>
 
   <div fxFlex='100' fxLayoutAlign='space-between'>
-    <button mat-raised-button color='primary' [disabled]='form.invalid'>Salvar</button>
+    <button mat-raised-button color='primary' [disabled]='form.invalid' (click)='salvar()'>Salvar</button>
     <button mat-raised-button color='warn' routerLink='/main/usuario/consulta'>Cancelar</button>
   </div>
 </form>

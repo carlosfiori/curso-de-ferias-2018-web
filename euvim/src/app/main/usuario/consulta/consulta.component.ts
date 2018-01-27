@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { DataSource } from '@angular/cdk/collections';
 import { UsuarioService } from '../usuario.service';
+import { Router } from '@angular/router/';
 
 @Component({
   selector: 'app-consulta',
@@ -13,19 +14,29 @@ export class ConsultaComponent implements OnInit {
   dataSource = null;
   service: UsuarioService
 
-  constructor(private _usuarioService: UsuarioService) {
-    this.dataSource = new MatTableDataSource(this._usuarioService.listar());
-  }
+  constructor(
+    private _usuarioService: UsuarioService,
+    private _router: Router
+  ) { }
 
   ngOnInit() {
+    this.obterLista();
+  }
+
+  private obterLista() {
+    this._usuarioService.listar().subscribe(success => {
+      this.dataSource = new MatTableDataSource(success);
+    })
   }
 
   editar(id: number) {
-    console.log(id);
+    this._router.navigate(['main/usuario/editar', id])
   }
 
   remover(id: number) {
-    this.dataSource.data = this.dataSource.data.filter(user => user.id !== id);
+    this._usuarioService.excluir(id).subscribe(suc => {
+      this.obterLista();
+    })
   }
 }
 
