@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
 import { DataSource } from '@angular/cdk/collections';
-import { UsuarioService } from '../usuario.service';
+import { MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router/';
+import { UsuarioService } from '../usuario.service';
 
 @Component({
   selector: 'app-consulta',

@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core'
-import { FormBuilder, FormGroup } from '@angular/forms'
-import { Validators } from '@angular/forms'
-import { EqualsPasswordValidator } from '../../../validators/equals.password.validator'
 import { ActivatedRoute } from '@angular/router'
-import { UsuarioService } from '../usuario.service'
+import { Component, OnInit } from '@angular/core'
+import { EqualsPasswordValidator } from '../../../validators/equals.password.validator'
+import { FormBuilder, FormGroup } from '@angular/forms'
 import { Router } from '@angular/router'
+import { UsuarioService } from '../usuario.service'
+import { Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-formulario',
