@@ -5,10 +5,10 @@ import { environment } from '../../../environments/environment';
 @Injectable()
 export class DisciplinaService {
 
-  private _urlUsuario = environment.url+"/api/v1/usuarios";
+  private _urlUsuario = environment.url+"/api/v1/disciplinas";
 
   constructor(private _httpClient: HttpClient) { }
-  
+
   adicionar(usuario){
     return this._httpClient.post(this._urlUsuario, usuario, {responseType: 'text'});
   }
