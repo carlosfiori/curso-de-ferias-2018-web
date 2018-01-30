@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
-import { UsuarioService } from '../usuario.service';
+import { DisciplinaService } from '../disciplina.service';
 import { MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 
@@ -14,34 +14,28 @@ import { Router } from '@angular/router';
 })
 export class ConsultaComponent implements OnInit {
 
-  public displayedColumns = ['nome', 'login', 'email', 'perfil', 'id'];
+  public displayedColumns = ['segmento', 'descricao', 'dataInicio', 'dataTermino', 'professores', 'id'];
   public dataSource: MatTableDataSource<any>;
 
-  public perfis = {
-     "PROFESSOR": 'Professor',
-     "ADMINISTRADOR": 'Administrador',
-     "ALUNO": 'Aluno'
-  };
-
   public noResults$ = false;
-  constructor(private _usuarioService: UsuarioService, private _router: Router) { }
+  constructor(private _disciplinaService: DisciplinaService, private _router: Router) { }
   
   ngOnInit() {
-    this.atualizarListaDeUsuarios();
+    this.atualizarListaDeDisciplinas();
   }
  
   excluir(id){
-    this._usuarioService.excluir(id).subscribe(suc=>{
-      this.atualizarListaDeUsuarios();
-  });
+    this._disciplinaService.excluir(id).subscribe(suc=>{
+      this.atualizarListaDeDisciplinas();
+    });
   }
 
   editar(id){
-    this._router.navigate(["/main/usuario/editar", id]);
+    this._router.navigate(["/main/disciplina/editar", id]);
   }
 
-  private atualizarListaDeUsuarios(){
-    this._usuarioService.listar().subscribe(suc => {
+  private atualizarListaDeDisciplinas(){
+    this._disciplinaService.listar().subscribe(suc => {
       this.noResults$ = suc.length == 0;
       this.dataSource = new MatTableDataSource(suc);
     });

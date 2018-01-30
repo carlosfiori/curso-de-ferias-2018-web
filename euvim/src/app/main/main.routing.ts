@@ -1,6 +1,6 @@
-import { MainComponent } from './main.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MainComponent } from './main.component';
 
 @NgModule({
   imports: [
@@ -14,11 +14,7 @@ import { RouterModule } from '@angular/router';
           },
           {
             path: 'disciplina',
-            loadChildren: './disciplinas/disciplina.module#DisciplinaModule'
-          },
-          {
-            path: 'relatorio',
-            loadChildren: './relatorio/relatorio.module#RelatorioModule'
+            loadChildren: './disciplina/disciplina.module#DisciplinaModule'
           }
         ]
       }

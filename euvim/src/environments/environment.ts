@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  url: 'https://curso-ferias-2018.herokuapp.com'
+  url: 'http://curso-ferias-2018.herokuapp.com'
 };

@@ -22,4 +22,4 @@ import { FormularioComponent } from './formulario/formulario.component';
     ])
   ]
 })
-export class UsuarioRouting { }
+export class DisciplinaRouting { }

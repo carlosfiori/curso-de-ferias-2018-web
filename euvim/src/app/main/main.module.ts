@@ -1,24 +1,26 @@
-import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from "@angular/flex-layout";
-import { MainComponent } from './main.component';
-import { MainRouting } from './main.rounting';
-import { MatIconModule, MatSidenavModule, MatCardModule, MatListModule, MatToolbarModule, MatButtonModule, MatProgressBarModule } from '@angular/material';
 import { NgModule } from '@angular/core';
-import { RouterModule } from "@angular/router";
+import { CommonModule } from '@angular/common';
+import { MainComponent } from './main.component';
+
+import { MainRouting } from './main.routing';
+import { RouterModule } from '@angular/router';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { MatIconModule, MatSidenavModule, MatCardModule, MatListModule, MatToolbarModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
-    FlexLayoutModule,
     MainRouting,
-    MatButtonModule,
-    MatCardModule,
-    MatIconModule,
-    MatListModule,
-    MatProgressBarModule,
-    MatSidenavModule,
-    MatToolbarModule,
     RouterModule,
+    FlexLayoutModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatListModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   declarations: [MainComponent]
 })

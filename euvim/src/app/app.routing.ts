@@ -4,12 +4,8 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/main',
-        pathMatch: 'full'
-      }
-    ], { useHash: true })
+      { path: '', redirectTo: '/main', pathMatch: 'full' }
+    ], {useHash:true})
   ]
 })
 export class AppRoutingModule { }
